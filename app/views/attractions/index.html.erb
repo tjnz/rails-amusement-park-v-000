@@ -10,11 +10,16 @@
   </thead>
 
   <tbody>
+  <td><strong>Picture</strong></td>
+  <td><strong>Name</strong></td>
+  <td><strong>Tickets</strong></td>
+  <td><strong>Details</strong></td>
     <% @attractions.each do |attraction| %>
       <tr>
-        <td><%= link_to 'Show', attraction %></td>
-        <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
-        <td><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><img src="http://www.allthingsclipart.com/05/amusement.park.05.jpg" width="100"></td>
+        <td><%= attraction.name %></td>
+        <td><%= attraction.tickets %></td>
+        <td><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></td>
       </tr>
     <% end %>
   </tbody>

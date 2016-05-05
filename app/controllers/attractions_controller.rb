@@ -69,6 +69,12 @@ class AttractionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attraction_params
-      params[:attraction]
+      params.require(:attraction).permit(
+        :name,
+        :tickets,
+        :nausea_rating,
+        :happiness_rating,
+        :min_height
+        )
     end
 end
