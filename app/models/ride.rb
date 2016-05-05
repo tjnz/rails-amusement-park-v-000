@@ -8,6 +8,7 @@ class Ride < ActiveRecord::Base
 	  	user.happiness += attraction.happiness_rating
 	  	user.tickets -= attraction.tickets
 	  	user.save  	
+	  	"Thanks for riding the #{attraction.name}!"
 	  else
 	  	msg = "Sorry."
 	  	msg += " You do not have enough tickets the #{attraction.name}." unless enough_tickets?
@@ -16,6 +17,7 @@ class Ride < ActiveRecord::Base
 	  end
   end
   
+
   private
   	def enough_tickets?
   		user.tickets >= attraction.tickets
